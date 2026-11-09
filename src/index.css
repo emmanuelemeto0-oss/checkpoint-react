@@ -1,0 +1,44 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #f4f0e9;
+  background: #111311;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  --ink: #f4f0e9;
+  --muted: #9c9b91;
+  --surface: #191b18;
+  --line: #343630;
+  --acid: #d7ed62;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #111311;
+  color: var(--ink);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #111311;
+  background: var(--acid);
+}
