@@ -4,6 +4,7 @@ function AddMovie({ onAddMovie }) {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
+    trailerURL: "",
     posterURL: "",
     rating: "",
   });
@@ -16,7 +17,13 @@ function AddMovie({ onAddMovie }) {
   function handleSubmit(event) {
     event.preventDefault();
     onAddMovie({ ...formData, rating: Number(formData.rating) });
-    setFormData({ title: "", description: "", posterURL: "", rating: "" });
+    setFormData({
+      title: "",
+      description: "",
+      trailerURL: "",
+      posterURL: "",
+      rating: "",
+    });
   }
 
   return (
@@ -53,6 +60,19 @@ function AddMovie({ onAddMovie }) {
         onChange={handleChange}
         placeholder="What's the story?"
         rows="3"
+        required
+      />
+      <label className="form-label" htmlFor="movie-trailer">
+        Trailer embed URL
+      </label>
+      <input
+        className="form-control"
+        id="movie-trailer"
+        name="trailerURL"
+        type="url"
+        value={formData.trailerURL}
+        onChange={handleChange}
+        placeholder="https://www.youtube-nocookie.com/embed/..."
         required
       />
       <label className="form-label" htmlFor="movie-poster">
